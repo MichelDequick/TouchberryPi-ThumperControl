@@ -25,7 +25,7 @@ void TouchBerryPi::start(void)
 
 
       usleep(1000);
-      progress = progress + 0.005;
+      progress = progress + 0.002;
       if(progress >= 1){progress = 0;}
 
       ledBar->setLed(0, color);
