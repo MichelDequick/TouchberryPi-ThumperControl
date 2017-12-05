@@ -1,6 +1,6 @@
 # TouchberryPi-ThumperControl
 
-##Dependencies
+## Dependencies
 
 ### Downloading and compiling library:
 ```
