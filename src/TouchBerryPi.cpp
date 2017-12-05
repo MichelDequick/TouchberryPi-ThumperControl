@@ -24,7 +24,7 @@ void TouchBerryPi::start(void)
     if(out == "B"){progress = progress + 0.005;}
 
     if(progress >= 1){progress = 0;}
-    if(progress == progressOld)
+    if(progress != progressOld)
     {
       cycler->calculateRGB(progress, color);
       for (int led = 0; led < 5; led++) {
@@ -33,7 +33,12 @@ void TouchBerryPi::start(void)
       thumper->setRGB(color);
     }
 
-    std::cout << out << std::endl;
+    if(out != old)
+    {
+      std::cout << out << std::endl;
+      old = out;
+    }
+
 
     // TODO: thumper driving
 
