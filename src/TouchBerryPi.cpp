@@ -21,9 +21,10 @@ void TouchBerryPi::start(void)
 
     // Handle color of leds (on TouchBerryPi and Thumper)
     if(out == "A"){progress = progress + 0.005;}
-    if(out == "B"){progress = progress + 0.005;}
+    if(out == "B"){progress = progress - 0.005;}
 
     if(progress >= 1){progress = 0;}
+    if(progress <= 0){progress = 0.999;}
     if(progress != progressOld)
     {
       cycler->calculateRGB(progress, color);
