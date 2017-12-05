@@ -33,6 +33,8 @@ void TouchBerryPi::start(void)
       thumper->setRGB(color);
     }
 
+    std::cout << out << std::endl;
+
     // TODO: thumper driving
 
     usleep(1000);
