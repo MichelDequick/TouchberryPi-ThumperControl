@@ -6,7 +6,7 @@ TouchBerryPi::TouchBerryPi(void)
   ledBar = new LedBar( TLC59116 );
   color = new RGBColor();
   cycler = new RGBCycler();
-  tumper = new ThumperControl("192.168.1.50");
+  thumper = new ThumperControl("192.168.1.50");
 }
 
 void TouchBerryPi::start(void)
@@ -30,7 +30,7 @@ void TouchBerryPi::start(void)
       for (int led = 0; led < 5; led++) {
           ledBar->setLed(led, color);
         }
-      tumper->setRGB(color);
+      thumper->setRGB(color);
     }
 
     // TODO: thumper driving
