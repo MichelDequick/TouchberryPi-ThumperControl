@@ -18,7 +18,7 @@ void ThumperControl::setRGB(RGBColor * color)
   int green = (int) (color->getGreen() * 255.0);
   int blue = (int) (color->getBlue() * 255.0);
   std::string url = this->url + this->rgb;
-  std::string json = "{ \"red\":" + std::to_string(r) + ", \"green\":" + std::to_string(b) + ", \"blue\":" + std::to_string(b) + "}";
+  std::string json = "{ \"red\":" + std::to_string(red) + ", \"green\":" + std::to_string(green) + ", \"blue\":" + std::to_string(blue) + "}";
   post(url, json);
 }
 
