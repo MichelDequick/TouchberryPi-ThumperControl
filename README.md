@@ -2,14 +2,10 @@
 
 ##Dependencies
 
-### Installing git & downloading library:
-```
-sudo apt-get update && sudo apt-get install git build-essential autoconf automake libtool libcurl4-gnutls-dev
-```
-
-### Compiling the library:
+### Downloading and compiling library:
 ```
 sudo su
+sudo apt-get update && sudo apt-get install git build-essential autoconf automake libtool libcurl4-gnutls-dev
 cd /usr/local/src
 git clone https://github.com/mrtazz/restclient-cpp.git
 cd restclient-cpp
