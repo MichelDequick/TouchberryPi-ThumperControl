@@ -21,4 +21,8 @@ ldconfig
 
 
 
-Compile using makefile (make clean && make)
+## Compilling the whole project:
+```
+make clean
+make
+```
