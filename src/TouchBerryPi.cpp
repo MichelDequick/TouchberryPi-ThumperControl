@@ -20,18 +20,18 @@ void TouchBerryPi::start(void)
     std::string out = touchInterface->getButton();
 
     // Handle color of leds (on TouchBerryPi and Thumper)
-    // if(out == "A"){progress = progress + 0.005;}
-    // if(out == "B"){progress = progress + 0.005;}
-    //
-    // if(progress >= 1){progress = 0;}
-    // if(progress != progressOld)
-    // {
-    //   cycler->calculateRGB(progress, color);
-    //   for (int led = 0; led < 5; led++) {
-    //       ledBar->setLed(led, color);
-    //     }
-    //   thumper->setRGB(color);
-    // }
+    if(out == "A"){progress = progress + 0.005;}
+    if(out == "B"){progress = progress + 0.005;}
+
+    if(progress >= 1){progress = 0;}
+    if(progress != progressOld)
+    {
+      cycler->calculateRGB(progress, color);
+      for (int led = 0; led < 5; led++) {
+          ledBar->setLed(led, color);
+        }
+      //thumper->setRGB(color);
+    }
 
     if(out != old)
     {
