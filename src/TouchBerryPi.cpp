@@ -6,7 +6,7 @@ TouchBerryPi::TouchBerryPi(void)
   ledBar = new LedBar( TLC59116 );
   color = new RGBColor();
   cycler = new RGBCycler();
-  thumper = new ThumperControl("192.168.1.50");
+  thumper = new ThumperControl("http://192.168.1.50");
 }
 
 void TouchBerryPi::start(void)
