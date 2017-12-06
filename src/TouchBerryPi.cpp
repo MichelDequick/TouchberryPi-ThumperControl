@@ -30,7 +30,7 @@ void TouchBerryPi::start(void)
       for (int led = 0; led < 5; led++) {
           ledBar->setLed(led, color);
         }
-      //thumper->setRGB(color);
+      thumper->setRGB(color);
     }
 
     if(out != old)
@@ -38,6 +38,9 @@ void TouchBerryPi::start(void)
       std::cout << out << std::endl;
       old = out;
     }
+
+
+
 
 
     // TODO: thumper driving
