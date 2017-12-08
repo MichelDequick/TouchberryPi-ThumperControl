@@ -20,6 +20,4 @@ class ThumperControl{
       void setRGB(RGBColor * color);
       void setDrive(int left, int right);
       void setAlarm(std::string action);
-      std::string getResponseJson(void);
-
 };
