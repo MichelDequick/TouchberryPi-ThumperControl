@@ -26,13 +26,13 @@ void ThumperControl::setRGB(RGBColor * color)
 void ThumperControl::setDrive(int left, int right)
 {
   std::string url = this->url + this->drive;
-  std::string json = "{ \"left_speed\":" + std::to_string(left) + ", \"right_speed\":" + std::to_string(right) + "}";
+  std::string json = "{ \"left_speed\":" + std::to_string(right) + ", \"right_speed\":" + std::to_string(left) + "}";
   post(url, json);
 }
 
 void ThumperControl::setAlarm(std::string action)
 {
   std::string url = this->url + this->alarm;
-  std::string json = "{\"action\": " + action + "}";
+  std::string json = "{\"action\": \"" + action + "\"}";
   post(url, json);
 }

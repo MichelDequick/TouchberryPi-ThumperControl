@@ -8,8 +8,8 @@ LedBar::LedBar(int addr)
 
 void LedBar::setLed(int led, RGBColor * color)
 {
-  float red = color->getRed();
-  float green = color->getGreen();
+  float green = color->getRed();
+  float red = color->getGreen();
   float blue = color->getBlue();
 
   led = led * 3;
