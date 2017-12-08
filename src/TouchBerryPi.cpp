@@ -24,28 +24,29 @@ void TouchBerryPi::start(void)
     switch(button) {
       case 32  :                         // Button A
         progress = progress + 0.05;
+        thumper->setRGB(color);
       break;
       case 16  :                         // Button B
-        progress = progress - 0.05;
+        //progress = progress - 0.05;
       break;
       case 64  :                         // Button X
-        thumper->setAlarm("on");
+        //thumper->setAlarm("on");
       break;
       case 4  :                         // Button UP
-        thumper->setDrive(200, 200);
+        //thumper->setDrive(200, 200);
       break;
       case 8  :                         // Button DOWN
-        thumper->setDrive(-200, -200);
+        //thumper->setDrive(-200, -200);
       break;
       case 1  :                         // Button LEFT
-        thumper->setDrive(-150, 150);
+        //thumper->setDrive(-150, 150);
       break;
       case 2  :                         // Button RIGHT
-        thumper->setDrive(150, -150);
+        //thumper->setDrive(150, -150);
       break;
       default:                         // Button NONE
-        thumper->setDrive(0, 0);
-        thumper->setAlarm("off");
+        //thumper->setDrive(0, 0);
+        //thumper->setAlarm("off");
       break;
 }
 
@@ -60,7 +61,7 @@ void TouchBerryPi::start(void)
       for (int led = 0; led < 5; led++) {
         ledBar->setLed(led, color);
       }
-      thumper->setRGB(color);
+
     }
 
 
