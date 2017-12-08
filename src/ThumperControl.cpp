@@ -36,3 +36,8 @@ void ThumperControl::setAlarm(std::string action)
   std::string json = "{\"action\": \"" + action + "\"}";
   post(url, json);
 }
+
+std::string ThumperControl::getResponseJson(void)
+{
+  return RestClient::Response.body;
+}

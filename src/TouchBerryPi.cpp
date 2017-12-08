@@ -6,7 +6,7 @@ TouchBerryPi::TouchBerryPi(void)
   ledBar = new LedBar( TLC59116 );
   color = new RGBColor();
   cycler = new RGBCycler();
-  thumper = new ThumperControl("http://192.168.1.50:3000");
+  thumper = new ThumperControl("http://192.168.1.12:3000");
 }
 
 void TouchBerryPi::start(void)
@@ -23,10 +23,10 @@ void TouchBerryPi::start(void)
 
     switch(button) {
       case 32  :                         // Button A
-        progress = progress + 0.02;
+        progress = progress + 0.005;
       break;
       case 16  :                         // Button B
-        progress = progress - 0.02;
+        progress = progress - 0.005;
       break;
       case 64  :                         // Button X
         thumper->setAlarm("on");
@@ -60,11 +60,11 @@ void TouchBerryPi::start(void)
       for (int led = 0; led < 5; led++) {
         ledBar->setLed(led, color);
       }
-      //thumper->setRGB(color);
+      thumper->setRGB(color);
       progressOld = progress;
     }
 
-
-    usleep(50000);         // 20Hz refresh
+    // 144Hz refresh
+    usleep(69444);
   }
 }
