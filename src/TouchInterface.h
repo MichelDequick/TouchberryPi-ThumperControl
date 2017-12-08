@@ -14,5 +14,5 @@ private:
 
 public:
   TouchInterface( int addr );
-  std::string getButton( void );
+  int getButton( void );
 };

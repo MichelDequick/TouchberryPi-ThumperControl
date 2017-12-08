@@ -17,33 +17,33 @@ void TouchBerryPi::start(void)
 
   while( true )
   {
-    std::string button = touchInterface->getButton();
+    int button = touchInterface->getButton();
 
     // Button handeler
 
     switch(button) {
-      case "A"  :
+      case 32  :                         // Button A
         progress = progress + 0.05;
       break;
-      case "B"  :
+      case 16  :                         // Button B
         progress = progress - 0.05;
       break;
-      case "X"  :
+      case 64  :                         // Button X
         thumper->setAlarm("on");
       break;
-      case "UP"  :
+      case 4  :                         // Button UP
         thumper->setDrive(200, 200);
       break;
-      case "DOWN"  :
+      case 8  :                         // Button DOWN
         thumper->setDrive(-200, -200);
       break;
-      case "LEFT"  :
+      case 1  :                         // Button LEFT
         thumper->setDrive(-150, 150);
       break;
-      case "RIGHT"  :
+      case 2  :                         // Button RIGHT
         thumper->setDrive(150, -150);
       break;
-      case "NONE"  :
+      default:                         // Button NONE
         thumper->setDrive(0, 0);
         thumper->setAlarm("off");
       break;
