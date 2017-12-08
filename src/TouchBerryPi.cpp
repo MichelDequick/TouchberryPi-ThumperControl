@@ -22,28 +22,28 @@ void TouchBerryPi::start(void)
     // Button handeler
 
     switch(button) {
-      case button == "A"  :
+      case "A"  :
         progress = progress + 0.05;
       break;
-      case button == "B"  :
+      case "B"  :
         progress = progress - 0.05;
       break;
-      case button == "X"  :
+      case "X"  :
         thumper->setAlarm("on");
       break;
-      case button == "UP"  :
+      case "UP"  :
         thumper->setDrive(200, 200);
       break;
-      case button == "DOWN"  :
+      case "DOWN"  :
         thumper->setDrive(-200, -200);
       break;
-      case button == "LEFT"  :
+      case "LEFT"  :
         thumper->setDrive(-150, 150);
       break;
-      case button == "RIGHT"  :
+      case "RIGHT"  :
         thumper->setDrive(150, -150);
       break;
-      case button == "NONE"  :
+      case "NONE"  :
         thumper->setDrive(0, 0);
         thumper->setAlarm("off");
       break;
