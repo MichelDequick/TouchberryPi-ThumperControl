@@ -17,37 +17,53 @@ void TouchBerryPi::start(void)
 
   while( true )
   {
-    std::string out = touchInterface->getButton();
+    std::string button = touchInterface->getButton();
+
+    // Button handeler
+
+    switch(button) {
+      case button == "A"  :
+        progress = progress + 0.05;
+      break;
+      case button == "B"  :
+        progress = progress - 0.05;
+      break;
+      case button == "X"  :
+        thumper->setAlarm("on");
+      break;
+      case button == "UP"  :
+        thumper->setDrive(200, 200);
+      break;
+      case button == "DOWN"  :
+        thumper->setDrive(-200, -200);
+      break;
+      case button == "LEFT"  :
+        thumper->setDrive(-150, 150);
+      break;
+      case button == "RIGHT"  :
+        thumper->setDrive(150, -150);
+      break;
+      case button == "NONE"  :
+        thumper->setDrive(0, 0);
+        thumper->setAlarm("off");
+      break;
+}
 
     // Handle color of leds (on TouchBerryPi and Thumper)
-    if(out == "A"){progress = progress + 0.005;}
 
-    if(progress >= 1){progress = 0;}
+    if(progress > 1){progress = 0;}
+    if(progress < 0){progress = 1;}
 
     if(progress != progressOld)
     {
       cycler->calculateRGB(progress, color);
       for (int led = 0; led < 5; led++) {
-          ledBar->setLed(led, color);
-        }
+        ledBar->setLed(led, color);
+      }
       thumper->setRGB(color);
     }
 
-    if(out != old)
-    {
-      std::cout << out << std::endl;
-      thumper->setRGB(color);
-      std::cout << "sent color" << std::endl;
-      old = out;
 
-    }
-
-
-
-
-
-    // TODO: thumper driving
-
-    usleep(1000);
+    usleep(50000);         // 20Hz refresh
   }
 }

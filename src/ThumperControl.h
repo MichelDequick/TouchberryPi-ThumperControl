@@ -11,6 +11,7 @@ class ThumperControl{
       std::string url;
       std::string rgb;
       std::string drive;
+      std::string alarm;
 
       void post(std::string url, std::string json);
 
@@ -18,4 +19,6 @@ class ThumperControl{
       ThumperControl(std::string url);
       void setRGB(RGBColor * color);
       void setDrive(int left, int right);
+      void setAlarm(std::string action);
+
 };

@@ -5,6 +5,7 @@ ThumperControl::ThumperControl(std::string url)
   this->url = url;
   this->rgb = "/neopixels/strings/0";
   this->drive = "/speed";
+  this->alarm = "/alarm";
 }
 
 void ThumperControl::post(std::string url, std::string json)
@@ -26,5 +27,12 @@ void ThumperControl::setDrive(int left, int right)
 {
   std::string url = this->url + this->drive;
   std::string json = "{ \"left_speed\":" + std::to_string(left) + ", \"right_speed\":" + std::to_string(right) + "}";
+  post(url, json);
+}
+
+void ThumperControl::setAlarm(std::string action)
+{
+  std::string url = this->url + this->alarm;
+  std::string json = "{\"action\": " + action + "}";
   post(url, json);
 }
