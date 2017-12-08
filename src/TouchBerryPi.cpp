@@ -6,7 +6,7 @@ TouchBerryPi::TouchBerryPi(void)
   ledBar = new LedBar( TLC59116 );
   color = new RGBColor();
   cycler = new RGBCycler();
-  thumper = new ThumperControl("http://192.168.1.50");
+  thumper = new ThumperControl("http://192.168.1.50:3000");
 }
 
 void TouchBerryPi::start(void)
@@ -36,7 +36,10 @@ void TouchBerryPi::start(void)
     if(out != old)
     {
       std::cout << out << std::endl;
+      thumper->setRGB(color);
+      std::cout << "sent color" << std::endl;
       old = out;
+
     }
 
 
