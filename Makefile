@@ -1,5 +1,5 @@
 # The compiler to use
-# CCPREFIX=/home/bioboost/rpi-tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin/arm-linux-gnueabihf-
+# CCPREFIX=~/rpi-tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin/arm-linux-gnueabihf-
 CC=$(CCPREFIX)g++
 
 # Compiler flags
