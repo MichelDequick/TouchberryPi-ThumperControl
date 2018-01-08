@@ -13,9 +13,14 @@ cd restclient-cpp
 ./configure
 make install
 ldconfig
+apt-get install i2c-tools
 ```
 
-
+Don't forget to enable i2c by using folowing command:
+```
+raspi-config
+```
+Interface Options->I2C->Yes
 
 ## Compilling the whole project:
 ```
