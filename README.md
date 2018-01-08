@@ -22,7 +22,15 @@ raspi-config
 ```
 Interface Options->I2C->Yes
 
+### Download code
+Execute folowing comand to download the code, make sure git is installed.
+Move to a suting folder for this project.
+```{r, engine='sh', count_lines}
+git clone https://github.com/MichelDequick/TouchberryPi-ThumperControl.git
+```
+
 ## Compilling the whole project:
+move inside the project folder .../TouchberryPi-ThumperControl
 ```
 make clean
 make
