@@ -6,4 +6,7 @@ int main(void)
   touchBerryPi = new TouchBerryPi();
 
   touchBerryPi->start();
+  
+  delete touchBerryPi;
+  touchBerryPi = NULL;
 }
